@@ -1,0 +1,53 @@
+@import './base.css';
+
+#app {
+  background-color: var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100vh;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+@media (min-width: 768px) {
+  #app {
+    flex-direction: row;
+    justify-content: center;
+    height: 100vh;
+    margin-right: 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  #app {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+}
+
+@media (min-width: 1280px) {
+  #app {
+    margin-left: 80px;
+    margin-right: 80px;
+  }
+}
+
+html {
+  font-size: 60%;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 70%;
+  }
+}
+@media (min-width: 1280px) {
+  html {
+    font-size: 100%;
+  }
+}
+@media (min-width: 1540px) {
+  html {
+    font-size: 120%;
+  }
+}
