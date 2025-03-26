@@ -8,13 +8,12 @@ const supabaseUrl = process.env.SUPABASE_URL
 const supabaseKey = process.env.SUPABASE_KEY
 const supabase = createClient(supabaseUrl, supabaseKey)
 const app = express()
-const PORT = process.env.PORT || 3000
 
 // Middleware
 app.use(cors())
 app.use(express.json())
 
-// Path ke file JSON
+// Path ke file JSON (pastikan path relatif)
 const dataPath = path.join(__dirname, 'sensorData.json')
 
 // Endpoint untuk mengambil semua data sensor
@@ -90,9 +89,5 @@ app.get('/api/sensor-data/:date', async (req, res) => {
   }
 })
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`)
-})
-
+// Export untuk Vercel
 module.exports = app
