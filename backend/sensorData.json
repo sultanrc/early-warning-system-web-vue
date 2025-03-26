@@ -5,8 +5,8 @@
     "time": "07:35:44",
     "temp": 22,
     "hum": 91,
-    "fa": true,
-    "status": 1
+    "fa": "False",
+    "status": true
   },
   {
     "id": 2,
@@ -14,26 +14,26 @@
     "time": "07:35:46",
     "temp": 20,
     "hum": 109,
-    "fa": true,
-    "status": 1
+    "fa": "False",
+    "status": true
   },
   {
     "id": 3,
     "date": "2023-03-08",
     "time": "07:35:48",
-    "temp": 24,
+    "temp": 34,
     "hum": 116,
-    "fa": true,
-    "status": 1
+    "fa": "False",
+    "status": true
   },
   {
     "id": 4,
     "date": "2023-03-08",
     "time": "07:35:50",
-    "temp": 25,
+    "temp": 35,
     "hum": 87,
-    "fa": true,
-    "status": 1
+    "fa": "False",
+    "status": true
   },
   {
     "id": 5,
@@ -41,17 +41,17 @@
     "time": "07:35:52",
     "temp": 20,
     "hum": 111,
-    "fa": true,
-    "status": 1
+    "fa": "False",
+    "status": true
   },
   {
     "id": 6,
     "date": "2023-03-08",
     "time": "07:35:54",
-    "temp": 19,
-    "hum": 73,
-    "fa": true,
-    "status": 1
+    "temp": 29,
+    "hum": 103,
+    "fa": "False",
+    "status": true
   },
   {
     "id": 7,
@@ -59,8 +59,8 @@
     "time": "07:35:56",
     "temp": 34,
     "hum": 92,
-    "fa": true,
-    "status": 1
+    "fa": "False",
+    "status": true
   },
   {
     "id": 8,
@@ -68,17 +68,17 @@
     "time": "07:35:58",
     "temp": 22,
     "hum": 89,
-    "fa": true,
-    "status": 1
+    "fa": "False",
+    "status": true
   },
   {
     "id": 9,
     "date": "2023-03-08",
     "time": "07:36:00",
     "temp": 23,
-    "hum": 79,
-    "fa": true,
-    "status": 1
+    "hum": 119,
+    "fa": "False",
+    "status": true
   },
   {
     "id": 10,
@@ -86,79 +86,358 @@
     "time": "07:36:02",
     "temp": 23,
     "hum": 81,
-    "fa": true,
-    "status": 1
+    "fa": "False",
+    "status": true
   },
   {
     "id": 11,
     "date": "2023-03-08",
     "time": "07:36:04",
-    "temp": 23,
+    "temp": 33,
     "hum": 88,
-    "fa": true,
-    "status": 1
+    "fa": "False",
+    "status": true
   },
   {
     "id": 12,
     "date": "2023-03-08",
     "time": "07:36:06",
     "temp": 21,
-    "hum": 78,
-    "fa": true,
-    "status": 1
+    "hum": 118,
+    "fa": "False",
+    "status": true
   },
   {
     "id": 13,
     "date": "2023-03-08",
     "time": "07:36:08",
-    "temp": 26,
+    "temp": 31,
     "hum": 83,
-    "fa": true,
-    "status": 1
+    "fa": "False",
+    "status": true
   },
   {
     "id": 15,
     "date": "2023-03-08",
     "time": "07:36:12",
-    "temp": 22,
+    "temp": 38,
     "hum": 82,
-    "fa": true,
-    "status": 1
+    "fa": "False",
+    "status": true
   },
   {
     "id": 16,
     "date": "2023-03-08",
     "time": "07:36:14",
-    "temp": 18,
+    "temp": 38,
     "hum": 111,
-    "fa": true,
-    "status": 1
+    "fa": "False",
+    "status": true
   },
   {
     "id": 17,
     "date": "2023-03-08",
     "time": "07:36:16",
-    "temp": 20,
+    "temp": 29,
     "hum": 86,
-    "fa": true,
-    "status": 1
+    "fa": "False",
+    "status": true
   },
   {
     "id": 18,
     "date": "2023-03-08",
     "time": "07:36:18",
-    "temp": 19,
+    "temp": 39,
     "hum": 86,
-    "fa": true,
-    "status": 1
+    "fa": "False",
+    "status": true
   },
   {
     "id": 20,
     "date": "2023-03-08",
     "time": "07:36:22",
+    "temp": 28,
+    "hum": 103,
+    "fa": "False",
+    "status": true
+  },
+  {
+    "id": 21,
+    "date": "2023-03-08",
+    "time": "07:36:24",
+    "temp": 21,
+    "hum": 93,
+    "fa": "False",
+    "status": true
+  },
+  {
+    "id": 26,
+    "date": "2023-03-08",
+    "time": "07:36:34",
+    "temp": 36,
+    "hum": 96,
+    "fa": "False",
+    "status": true
+  },
+  {
+    "id": 27,
+    "date": "2023-03-08",
+    "time": "07:36:36",
+    "temp": 20,
+    "hum": 119,
+    "fa": "False",
+    "status": true
+  },
+  {
+    "id": 28,
+    "date": "2023-03-08",
+    "time": "07:36:38",
+    "temp": 23,
+    "hum": 111,
+    "fa": "False",
+    "status": true
+  },
+  {
+    "id": 29,
+    "date": "2023-03-08",
+    "time": "07:36:40",
+    "temp": 27,
+    "hum": 118,
+    "fa": "False",
+    "status": true
+  },
+  {
+    "id": 30,
+    "date": "2023-03-08",
+    "time": "07:36:42",
+    "temp": 26,
+    "hum": 115,
+    "fa": "False",
+    "status": true
+  },
+  {
+    "id": 31,
+    "date": "2023-03-08",
+    "time": "07:36:44",
+    "temp": 32,
+    "hum": 112,
+    "fa": "False",
+    "status": true
+  },
+  {
+    "id": 32,
+    "date": "2023-03-08",
+    "time": "07:36:46",
+    "temp": 23,
+    "hum": 83,
+    "fa": "False",
+    "status": true
+  },
+  {
+    "id": 33,
+    "date": "2023-03-08",
+    "time": "07:36:48",
+    "temp": 21,
+    "hum": 107,
+    "fa": "False",
+    "status": true
+  },
+  {
+    "id": 34,
+    "date": "2023-03-08",
+    "time": "07:36:50",
+    "temp": 25,
+    "hum": 115,
+    "fa": "False",
+    "status": true
+  },
+  {
+    "id": 35,
+    "date": "2023-03-08",
+    "time": "07:36:52",
+    "temp": 31,
+    "hum": 94,
+    "fa": "False",
+    "status": true
+  },
+  {
+    "id": 36,
+    "date": "2023-03-08",
+    "time": "07:36:54",
+    "temp": 37,
+    "hum": 113,
+    "fa": "False",
+    "status": true
+  },
+  {
+    "id": 37,
+    "date": "2023-03-08",
+    "time": "07:36:56",
+    "temp": 36,
+    "hum": 89,
+    "fa": "False",
+    "status": true
+  },
+  {
+    "id": 38,
+    "date": "2023-03-08",
+    "time": "07:36:58",
+    "temp": 35,
+    "hum": 89,
+    "fa": "False",
+    "status": true
+  },
+  {
+    "id": 39,
+    "date": "2023-03-08",
+    "time": "07:37:00",
+    "temp": 33,
+    "hum": 105,
+    "fa": "False",
+    "status": true
+  },
+  {
+    "id": 40,
+    "date": "2023-03-08",
+    "time": "07:37:02",
+    "temp": 25,
+    "hum": 96,
+    "fa": "False",
+    "status": true
+  },
+  {
+    "id": 41,
+    "date": "2023-03-08",
+    "time": "07:37:04",
+    "temp": 31,
+    "hum": 86,
+    "fa": "False",
+    "status": true
+  },
+  {
+    "id": 42,
+    "date": "2023-03-08",
+    "time": "07:37:06",
+    "temp": 21,
+    "hum": 97,
+    "fa": "False",
+    "status": true
+  },
+  {
+    "id": 43,
+    "date": "2023-03-08",
+    "time": "07:37:08",
+    "temp": 31,
+    "hum": 81,
+    "fa": "False",
+    "status": true
+  },
+  {
+    "id": 44,
+    "date": "2023-03-08",
+    "time": "07:37:10",
+    "temp": 24,
+    "hum": 88,
+    "fa": "False",
+    "status": true
+  },
+  {
+    "id": 45,
+    "date": "2023-03-08",
+    "time": "07:37:12",
+    "temp": 33,
+    "hum": 99,
+    "fa": "False",
+    "status": true
+  },
+  {
+    "id": 46,
+    "date": "2023-03-08",
+    "time": "07:37:14",
+    "temp": 25,
+    "hum": 89,
+    "fa": "False",
+    "status": true
+  },
+  {
+    "id": 47,
+    "date": "2023-03-08",
+    "time": "07:37:16",
+    "temp": 26,
+    "hum": 107,
+    "fa": "False",
+    "status": true
+  },
+  {
+    "id": 48,
+    "date": "2023-03-08",
+    "time": "07:37:18",
+    "temp": 28,
+    "hum": 89,
+    "fa": "False",
+    "status": true
+  },
+  {
+    "id": 49,
+    "date": "2023-03-08",
+    "time": "07:37:20",
+    "temp": 28,
+    "hum": 117,
+    "fa": "False",
+    "status": true
+  },
+  {
+    "id": 50,
+    "date": "2023-03-08",
+    "time": "07:37:22",
     "temp": 22,
-    "hum": 62,
-    "fa": false,
-    "status": 1
+    "hum": 102,
+    "fa": "False",
+    "status": true
+  },
+  {
+    "id": 51,
+    "date": "2023-03-08",
+    "time": "07:37:24",
+    "temp": 30,
+    "hum": 91,
+    "fa": "False",
+    "status": true
+  },
+  {
+    "id": 52,
+    "date": "2023-03-08",
+    "time": "07:37:26",
+    "temp": 21,
+    "hum": 85,
+    "fa": "False",
+    "status": true
+  },
+  {
+    "id": 70,
+    "date": "2023-04-06",
+    "time": "16:43:50",
+    "temp": 8,
+    "hum": 66,
+    "fa": "False",
+    "status": true
+  },
+  {
+    "id": 71,
+    "date": "2023-04-06",
+    "time": "16:40:00",
+    "temp": 2,
+    "hum": 12,
+    "fa": "False",
+    "status": false
+  },
+  {
+    "id": 72,
+    "date": "2023-04-07",
+    "time": "08:04:10",
+    "temp": 4,
+    "hum": 4,
+    "fa": "False",
+    "status": null
   }
 ]
