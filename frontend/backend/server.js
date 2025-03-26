@@ -4,11 +4,9 @@ const cors = require('cors')
 const fs = require('fs')
 const path = require('path')
 const { createClient } = require('@supabase/supabase-js')
-
 const supabaseUrl = process.env.SUPABASE_URL
 const supabaseKey = process.env.SUPABASE_KEY
 const supabase = createClient(supabaseUrl, supabaseKey)
-
 const app = express()
 const PORT = process.env.PORT || 3000
 
@@ -93,8 +91,8 @@ app.get('/api/sensor-data/:date', async (req, res) => {
 })
 
 // Start server
-// app.listen(PORT, () => {
-//   console.log(`Server running on port ${PORT}`)
-// })
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`)
+})
 
 module.exports = app
