@@ -160,7 +160,7 @@ onMounted(() => {
     <div
       class="relative w-1/2 md:w-1/3 px-10 flex flex-col py-4 md:py-0 gap-2 md:gap-6 items-center justify-center rounded-3xl bg-primary"
     >
-      <h2 class="font-medium">Current Temperature</h2>
+      <h2 class="text-sm md:text-base font-medium">Current Temperature</h2>
       <svg
         width="40"
         height="44"
@@ -212,7 +212,7 @@ onMounted(() => {
     <div
       class="relative w-1/2 md:w-1/3 px-10 flex flex-col gap-2 md:gap-6 items-center justify-center rounded-3xl bg-primary"
     >
-      <h2 class="font-medium">Current Humidity</h2>
+      <h2 class="text-sm md:text-base font-medium">Current Humidity</h2>
       <svg
         width="36"
         height="36"

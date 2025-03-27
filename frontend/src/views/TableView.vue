@@ -1,6 +1,6 @@
 <template>
   <section id="table" class="flex w-full flex-col bg-white text-base mb-20">
-    <div class="flex justify-between items-center">
+    <div class="flex justify-between items-center md:mb-0 mb-4">
       <div class="mb-2">
         <div class="flex items-center">
           <input
@@ -8,12 +8,12 @@
             v-model="searchQuery"
             type="text"
             placeholder="Search ..."
-            class="px-3 py-1 text-sm border border-gray-300 rounded-lg focus:outline-none focus:border-2 focus:border-temp"
+            class="px-3 py-3 md:py-1 text-sm border border-gray-300 rounded-lg focus:outline-none focus:border-2 focus:border-temp"
           />
         </div>
       </div>
       <div class="relative flex flex-col gap-4 text-sm">
-        <div class="flex gap-4 mb-3">
+        <div class="flex gap-4 mb-2 md:mb-3">
           <input
             type="date"
             id="dateInput"
