@@ -158,7 +158,7 @@ onMounted(() => {
 <template>
   <section id="current" class="flex gap-4">
     <div
-      class="relative w-1/2 md:w-1/3 px-10 flex flex-col py-4 md:py-0 gap-2 md:gap-6 items-center justify-center rounded-3xl bg-primary"
+      class="relative w-1/2 md:w-1/3 px-10 flex flex-col py-4 md:py-0 gap-2 md:gap-6 items-center justify-center rounded-3xl md:bg-primary"
     >
       <h2 class="text-sm md:text-base font-medium">Current Temperature</h2>
       <svg
@@ -167,7 +167,7 @@ onMounted(() => {
         viewBox="0 0 46 50"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        class="absolute scale-75 xl:scale-100 left-6 md:left-16 lg:left-12 xl:left-20 top-14"
+        class="absolute scale-50 md:scale-75 xl:scale-100 left-8 md:left-16 lg:left-12 xl:left-20 top-10 md:top-14"
       >
         <path
           d="M13 34.9995C11.6193 34.9995 10.5 36.1187 10.5 37.4995C10.5 38.8802 11.6193 39.9995 13 39.9995C14.3807 39.9995 15.5 38.8802 15.5 37.4995C15.5 36.1187 14.3807 34.9995 13 34.9995ZM13 34.9995L13.0177 25M13 37.4995L13.0177 37.5173M43 7.5C43 10.2614 40.7615 12.5 38 12.5C35.2385 12.5 33 10.2614 33 7.5C33 4.73857 35.2385 2.5 38 2.5C40.7615 2.5 43 4.73857 43 7.5ZM23 37.4995C23 43.0225 18.5228 47.4995 13 47.4995C7.47715 47.4995 3 43.0225 3 37.4995C3 34.9635 3.9441 32.6478 5.5 30.885V10C5.5 5.85788 8.85788 2.5 13 2.5C17.1421 2.5 20.5 5.85788 20.5 10V30.885C22.056 32.6478 23 34.9635 23 37.4995Z"
@@ -210,7 +210,7 @@ onMounted(() => {
       >
     </div>
     <div
-      class="relative w-1/2 md:w-1/3 px-10 flex flex-col gap-2 md:gap-6 items-center justify-center rounded-3xl bg-primary"
+      class="relative w-1/2 md:w-1/3 px-10 flex flex-col gap-2 md:gap-6 items-center justify-center rounded-3xl md:bg-primary"
     >
       <h2 class="text-sm md:text-base font-medium">Current Humidity</h2>
       <svg
@@ -219,7 +219,7 @@ onMounted(() => {
         viewBox="0 0 36 36"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        class="absolute scale-75 xl:scale-100 left-6 md:left-16 lg:left-12 xl:left-20 top-14"
+        class="absolute scale-50 xl:scale-100 left-8 md:left-16 lg:left-12 xl:left-20 top-12"
       >
         <path
           d="M18 36C22.6422 36 25.2 33.57 25.2 29.1601C25.2 23.3228 19.3734 18.5925 19.125 18.3945C18.8057 18.1389 18.409 17.9997 18 17.9997C17.591 17.9997 17.1943 18.1389 16.875 18.3945C16.6266 18.5925 10.8 23.3228 10.8 29.1601C10.8 33.57 13.3578 36 18 36ZM18 22.2501C19.9974 24.0413 21.2766 26.4968 21.6 29.1601C21.6 31.1617 20.997 32.4001 18 32.4001C15.003 32.4001 14.4 31.1617 14.4 29.1601C14.7234 26.4968 16.0026 24.0413 18 22.2501ZM8.325 0.394868C8.00575 0.139267 7.60897 0 7.2 0C6.79103 0 6.39425 0.139267 6.075 0.394868C5.8266 0.592865 0 5.32317 0 11.1605C0 15.5704 2.5578 18.0003 7.2 18.0003C11.8422 18.0003 14.4 15.5704 14.4 11.1605C14.4 5.32317 8.5734 0.592865 8.325 0.394868ZM7.2 14.4004C4.203 14.4004 3.6 13.162 3.6 11.1605C3.9234 8.49711 5.20263 6.04169 7.2 4.2504C9.19737 6.04169 10.4766 8.49711 10.8 11.1605C10.8 13.162 10.197 14.4004 7.2 14.4004ZM29.925 0.394868C29.6057 0.139267 29.209 0 28.8 0C28.391 0 27.9943 0.139267 27.675 0.394868C27.4266 0.592865 21.6 5.32317 21.6 11.1605C21.6 15.5704 24.1578 18.0003 28.8 18.0003C33.4422 18.0003 36 15.5704 36 11.1605C36 5.32317 30.1734 0.592865 29.925 0.394868ZM28.8 14.4004C25.803 14.4004 25.2 13.162 25.2 11.1605C25.5234 8.49711 26.8026 6.04169 28.8 4.2504C30.7974 6.04169 32.0766 8.49711 32.4 11.1605C32.4 13.162 31.797 14.4004 28.8 14.4004Z"
@@ -308,7 +308,7 @@ onMounted(() => {
 
   <section id="current" class="flex md:hidden">
     <div
-      class="relative w-full flex flex-col gap-1 p-4 items-center justify-center rounded-3xl bg-primary"
+      class="relative w-full flex flex-col gap-1 p-4 items-center justify-center rounded-3xl md:bg-primary"
     >
       <svg
         width="30"
@@ -357,7 +357,7 @@ onMounted(() => {
   </section>
   <section id="chart" class="flex flex-col md:flex-row justify-between gap-6">
     <div
-      class="md:w-1/2 flex flex-col h-[150px] 2xl:h-[360px] md:h-[300px] p-4 items-center justify-between bg-primary rounded-3xl"
+      class="md:w-1/2 flex flex-col h-[150px] 2xl:h-[360px] md:h-[300px] p-1 md:p-4 items-center justify-between md:bg-primary rounded-3xl"
     >
       <h2 class="hidden md:flex font-medium">Temperature Chart</h2>
       <Line
@@ -369,7 +369,7 @@ onMounted(() => {
       <span v-else>Loading...</span>
     </div>
     <div
-      class="md:w-1/2 flex flex-col h-[150px] 2xl:h-[360px] md:h-[300px] p-4 items-center justify-between bg-primary rounded-3xl"
+      class="md:w-1/2 flex flex-col h-[150px] 2xl:h-[360px] md:h-[300px] p-1 md:p-4 items-center justify-between md:bg-primary rounded-3xl"
     >
       <h2 class="hidden md:flex font-medium">Humidity Chart</h2>
       <Line

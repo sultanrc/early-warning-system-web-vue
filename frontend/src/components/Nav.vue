@@ -15,7 +15,7 @@ const toggleMenu = () => {
 <template>
   <div class="w-full flex justify-between items-center">
     <!-- Logo -->
-    <span class="mt-2 md:mt-0 scale-75 lg:scale-100">
+    <span class="mt-2 md:mt-0 scale-50 lg:scale-100">
       <svg
         width="81"
         height="53"
@@ -130,7 +130,9 @@ const toggleMenu = () => {
       <router-link to="/about" class="font-semibold"> About </router-link>
     </li>
   </ul>
-  <div class="absolute hidden md:flex flex-col bottom-10 text-[10px] text-neutral-400 mr-4">
+  <div
+    class="absolute hidden md:flex flex-col bottom-10 text-[10px] text-neutral-400 mr-4 text-justify"
+  >
     <span class="font-bold text-temp opacity-55"> Disclaimer: </span>
     <span>
       All data displayed on this website is fictitious and used solely for demonstration purposes.

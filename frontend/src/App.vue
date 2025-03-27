@@ -8,7 +8,7 @@ import Footer from './components/Footer.vue'
 <template>
   <nav
     id="nav"
-    class="relative flex justify-between md:justify-start md:flex-col w-full md:w-[200px] lg:w-[320px] p-2 md:p-4 lg:p-8"
+    class="relative flex justify-between md:justify-start md:flex-col w-full md:w-[200px] lg:w-[320px] md:p-4 lg:p-8"
   >
     <Nav />
   </nav>

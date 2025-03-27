@@ -81,9 +81,9 @@
             <tr v-for="(item, index) in paginatedData" :key="index" class="border-b">
               <td class="px-4 py-2">{{ item.date }}</td>
               <td class="px-4 py-2">{{ item.time }}</td>
-              <td class="px-4 py-2">{{ item.temp }}</td>
-              <td class="px-4 py-2">{{ item.hum }}</td>
-              <td class="px-4 py-2">{{ item.fa ? 'Yes' : 'No' }}</td>
+              <td class="px-4 py-2">{{ item.temp }} °C</td>
+              <td class="px-4 py-2">{{ item.hum }} %</td>
+              <td class="px-4 py-2">{{ item.fa ? 'Fire detected' : 'Safe' }}</td>
             </tr>
           </template>
           <tr v-else>
