@@ -2,30 +2,21 @@
 import { ref, onMounted, computed } from 'vue'
 import { Chart, registerables } from 'chart.js'
 import { Line } from 'vue-chartjs'
+import data from '@/data.json'
 Chart.register(...registerables)
 
 // State untuk data sensor
 const sensorData = ref([])
 
-// Fetch data dari backend
-const fetchData = async () => {
+// Fetch data dari lokal JSON
+const fetchData = () => {
   try {
-    const response = await fetch('http://localhost:3000/api/sensor-data')
-    const data = await response.json()
+    // Ambil 10 data terakhir
+    sensorData.value = data.slice(-10)
 
-    // Log data untuk debugging
-    console.log('Fetched Data:', data)
-
-    if (data && Array.isArray(data) && data.length > 0) {
-      // Ambil 10 data terakhir
-      sensorData.value = data.slice(-10)
-
-      console.log('Processed Sensor Data:', sensorData.value)
-    } else {
-      console.error('Invalid data format')
-    }
+    console.log('Processed Sensor Data:', sensorData.value)
   } catch (error) {
-    console.error('Error fetching sensor data:', error)
+    console.error('Error loading sensor data:', error)
   }
 }
 
@@ -159,21 +150,6 @@ const calculateHumOffset = computed(() => {
 // Panggil fetchData saat komponen dimuat
 onMounted(() => {
   fetchData()
-
-  const intervalId = setInterval(async () => {
-    try {
-      await fetchData()
-      // Optional: Tambahkan transisi atau animasi ringan
-      nextTick(() => {
-        // Pastikan rendering smooth
-      })
-    } catch (error) {
-      console.error('Refresh failed:', error)
-    }
-  }, 5000)
-
-  // Membersihkan interval saat komponen di-unmount
-  return () => clearInterval(intervalId)
 })
 </script>
 

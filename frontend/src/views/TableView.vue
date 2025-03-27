@@ -135,10 +135,11 @@
 <script setup>
 import { ref, computed, watch, onMounted } from 'vue'
 import jsPDF from 'jspdf'
+import data from '@/data.json'
 
 const tableData = ref([])
 const allData = ref([]) // Store all data for reset
-const loading = ref(true)
+const loading = ref(false)
 const error = ref(null)
 const selectedDate = ref('')
 const currentPage = ref(1)
@@ -150,26 +151,13 @@ watch(searchQuery, () => {
   currentPage.value = 1
 })
 
-const API_BASE_URL = 'http://localhost:3000/api'
-
 const fetchData = async () => {
-  loading.value = true
-  error.value = null
-
   try {
-    const response = await fetch(`${API_BASE_URL}/sensor-data`)
-    if (!response.ok) {
-      throw new Error('Network response was not ok')
-    }
-
-    const data = await response.json()
     tableData.value = data
-    allData.value = data // Simpan semua data untuk reset
-    loading.value = false
+    allData.value = data
   } catch (err) {
-    error.value = 'Failed to fetch data: ' + err.message
-    loading.value = false
-    console.error('Error fetching data:', err)
+    error.value = 'Failed to load data: ' + err.message
+    console.error('Error loading data:', err)
   }
 }
 
@@ -179,30 +167,9 @@ const filterByDate = async () => {
     return
   }
 
-  loading.value = true
-  error.value = null
-
-  try {
-    const response = await fetch(`${API_BASE_URL}/sensor-data/${selectedDate.value}`)
-    if (response.status === 404) {
-      tableData.value = []
-      loading.value = false
-      return
-    }
-
-    if (!response.ok) {
-      throw new Error('Network response was not ok')
-    }
-
-    const data = await response.json()
-    tableData.value = data
-    currentPage.value = 1
-    loading.value = false
-  } catch (err) {
-    error.value = 'Failed to fetch data: ' + err.message
-    loading.value = false
-    console.error('Error fetching data by date:', err)
-  }
+  const filteredByDate = allData.value.filter((item) => item.date === selectedDate.value)
+  tableData.value = filteredByDate
+  currentPage.value = 1
 }
 
 // Improved search functionality
@@ -224,11 +191,34 @@ const filteredData = computed(() => {
     .reverse() // Most recent data first
 })
 
-// Rest of the pagination and other computed properties remain the same
+// Pagination computed properties
 const totalPages = computed(() => Math.max(1, Math.ceil(filteredData.value.length / pageSize)))
 const startIndex = computed(() => (currentPage.value - 1) * pageSize)
 const endIndex = computed(() => startIndex.value + pageSize)
 const paginatedData = computed(() => filteredData.value.slice(startIndex.value, endIndex.value))
+
+// PDF Generation
+const generatePDF = () => {
+  const doc = new jsPDF()
+  doc.text('Sensor Data', 10, 10)
+
+  const headers = ['Date', 'Time', 'Temperature', 'Humidity', 'Fire Anomaly']
+  const data = filteredData.value.map((item) => [
+    item.date,
+    item.time,
+    item.temp,
+    item.hum,
+    item.fa ? 'Yes' : 'No',
+  ])
+
+  doc.autoTable({
+    head: [headers],
+    body: data,
+    startY: 20,
+  })
+
+  doc.save(`sensor_data_${selectedDate.value || 'all'}.pdf`)
+}
 
 onMounted(() => {
   fetchData()
