@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "lint": "eslint . --fix",
     "format": "prettier --write src/",
-    "generate-css": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify"
+    "generate-css": "tailwindcss -i ./src/assets/input.css -o ./dist/output.css --minify"
   },
   "dependencies": {
     "chart.js": "^4.4.8",
