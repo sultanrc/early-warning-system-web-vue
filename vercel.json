@@ -6,8 +6,7 @@
       "use": "@vercel/static-build",
       "config": {
         "distDir": "frontend/dist"
-      },
-      "buildCommand": "npm run generate-css && npm run build"
+      }
     },
     {
       "src": "backend/server.js",
