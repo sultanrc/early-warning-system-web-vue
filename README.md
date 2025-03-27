@@ -1,18 +1,3 @@
-Early Warning System (EWS)
-
-This is the latest version of the Early Warning System (EWS), now built with Vue.js, Tailwind CSS, and Express.js for enhanced performance and a modern design.
-
-EWS is designed to monitor temperature, humidity, and fire anomalies in server rooms. The system automatically sends notifications when abnormal conditions are detected.
-
-Technologies Used
-• Frontend: Vue.js, Tailwind CSS
-• Backend: Express.js
-• Database: Supabase
-• Hardware: ESP8266 (NodeMCU), DHT11, Fire Detection Sensor
-• Notifications: Node-RED & Email Alerts
-
-The previous version of this project can be found in the following repository:
-🔗 [GitHub - sultanrc](https://github.com/sultanrc/early-warning-system-web)
-
-The original project, featuring ESP8266, DHT11, and other embedded integrations, is available here:
-🔗 [GitHub - Ahmad-Kun](https://github.com/Ahmad-Kun/proyek-arduino)
+This is the latest version of the Early Warning System (EWS), now built with Vue.js, Tailwind CSS, and Express.js for enhanced performance and a modern design. EWS monitors temperature, humidity, and fire anomalies in server rooms, automatically sending notifications when abnormal conditions are detected. It utilizes Vue.js and Tailwind CSS for the frontend, Express.js for the backend, and Supabase as the database. The hardware includes an ESP8266 (NodeMCU), DHT11, and a fire detection sensor, with notifications managed via Node-RED and email alerts. The previous version of this project can be found in the following repository:
+🔗 [GitHub - sultanrc](https://github.com/sultanrc/early-warning-system-web). And the original project, featuring ESP8266, DHT11, and other embedded integrations, is available here:
+🔗 [GitHub - Ahmad-Kun](https://github.com/Ahmad-Kun/proyek-arduino).
