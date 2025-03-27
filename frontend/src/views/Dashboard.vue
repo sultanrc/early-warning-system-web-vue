@@ -10,7 +10,7 @@ const sensorData = ref([])
 // Fetch data dari backend
 const fetchData = async () => {
   try {
-    const response = await fetch('/api/sensor-data')
+    const response = await fetch('http://localhost:3000/api/sensor-data')
     const data = await response.json()
 
     // Log data untuk debugging

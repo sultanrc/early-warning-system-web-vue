@@ -5,11 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run generate-css && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint . --fix",
-    "format": "prettier --write src/",
-    "generate-css": "tailwindcss -i ./src/assets/input.css -o ./dist/output.css --minify"
+    "format": "prettier --write src/"
   },
   "dependencies": {
     "chart.js": "^4.4.8",

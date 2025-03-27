@@ -150,14 +150,14 @@ watch(searchQuery, () => {
   currentPage.value = 1
 })
 
-// const API_BASE_URL = 'http://localhost:3000/api'
+const API_BASE_URL = 'http://localhost:3000/api'
 
 const fetchData = async () => {
   loading.value = true
   error.value = null
 
   try {
-    const response = await fetch('/api/sensor-data')
+    const response = await fetch(`${API_BASE_URL}/sensor-data`)
     if (!response.ok) {
       throw new Error('Network response was not ok')
     }
