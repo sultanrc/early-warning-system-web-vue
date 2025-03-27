@@ -2,7 +2,6 @@
 import { ref, onMounted, computed } from 'vue'
 import { Chart, registerables } from 'chart.js'
 import { Line } from 'vue-chartjs'
-import data from '@/data.json'
 Chart.register(...registerables)
 
 // State untuk data sensor
