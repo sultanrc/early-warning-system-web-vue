@@ -42,7 +42,7 @@ const temperatureChartData = computed(() => ({
 }))
 
 const temperatureChartOptions = {
-  responsive: true,
+  responsive: false,
   maintainAspectRatio: true,
   plugins: {
     legend: {
@@ -82,7 +82,7 @@ const humidityChartData = computed(() => ({
 }))
 
 const humidityChartOptions = {
-  responsive: true,
+  responsive: false,
   maintainAspectRatio: true,
   plugins: {
     legend: {
@@ -338,9 +338,13 @@ onMounted(() => {
       </svg>
       <h2 class="font-medium">Fire Anomaly Status</h2>
       <div
-        class="flex w-32 h-32 items-center justify-center rounded-full text-white animated-gradient scale-75 lg:scale-100"
+        class="flex w-32 h-32 items-center justify-center rounded-full text-white scale-75 lg:scale-100"
+        :class="latestData && (latestData.fire ? 'bg-danger text-2xl' : 'bg-safe text-4xl ')"
       >
-        <span class="text-4xl font-bold">SAFE</span>
+        <span class="font-bold" v-if="latestData">
+          {{ latestData.fire ? 'DANGER' : 'SAFE' }}
+        </span>
+        <span v-else>Loading...</span>
       </div>
       <span class="hidden md:flextext-center text-xs text-neutral-400"
         >This system detects fire using a sensor and displays the fire status in real-time. If fire
@@ -355,24 +359,24 @@ onMounted(() => {
     <div
       class="md:w-1/2 flex flex-col h-[150px] 2xl:h-[360px] md:h-[300px] p-4 items-center justify-between bg-primary rounded-3xl"
     >
-      <h2 class="font-medium">Temperature Chart</h2>
+      <h2 class="hidden md:flex font-medium">Temperature Chart</h2>
       <Line
         v-if="sensorData.length > 0"
         :data="temperatureChartData"
         :options="temperatureChartOptions"
-        class="w-full h-full scale-90"
+        class="w-full h-full scale-75 md:scale-90"
       />
       <span v-else>Loading...</span>
     </div>
     <div
       class="md:w-1/2 flex flex-col h-[150px] 2xl:h-[360px] md:h-[300px] p-4 items-center justify-between bg-primary rounded-3xl"
     >
-      <h2 class="font-medium">Humidity Chart</h2>
+      <h2 class="hidden md:flex font-medium">Humidity Chart</h2>
       <Line
         v-if="sensorData.length > 0"
         :data="humidityChartData"
         :options="humidityChartOptions"
-        class="w-full h-full scale-90"
+        class="w-full h-full scale-75 md:scale-90"
       />
       <span v-else>Loading...</span>
     </div>
