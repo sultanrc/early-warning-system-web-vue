@@ -203,26 +203,36 @@ const paginatedData = computed(() => filteredData.value.slice(startIndex.value, 
 // PDF Generation
 const generatePDF = () => {
   const doc = new jsPDF()
+
+  // Judul
+  doc.setFontSize(18)
   doc.text('Sensor Data', 10, 10)
 
-  const headers = ['Date', 'Time', 'Temperature', 'Humidity', 'Fire Anomaly']
-  const data = filteredData.value.map((item) => [
-    item.date,
-    item.time,
-    item.temp,
-    item.hum,
-    item.fa ? 'Yes' : 'No',
-  ])
+  // Header
+  doc.setFontSize(12)
+  doc.text('Date', 10, 20)
+  doc.text('Time', 50, 20)
+  doc.text('Temperature', 90, 20)
+  doc.text('Humidity', 130, 20)
+  doc.text('Fire Anomaly', 170, 20)
 
-  doc.autoTable({
-    head: [headers],
-    body: data,
-    startY: 20,
+  // Garis pembatas header
+  doc.line(10, 22, 200, 22)
+
+  // Data
+  doc.setFontSize(10)
+  filteredData.value.forEach((item, index) => {
+    const yPosition = 30 + index * 10
+
+    doc.text(item.date, 10, yPosition)
+    doc.text(item.time, 50, yPosition)
+    doc.text(String(item.temp), 90, yPosition)
+    doc.text(String(item.hum), 130, yPosition)
+    doc.text(item.fa ? 'Yes' : 'No', 170, yPosition)
   })
 
   doc.save(`sensor_data_${selectedDate.value || 'all'}.pdf`)
 }
-
 onMounted(() => {
   fetchData()
 })
