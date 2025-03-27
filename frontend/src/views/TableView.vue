@@ -135,7 +135,6 @@
 <script setup>
 import { ref, computed, watch, onMounted } from 'vue'
 import jsPDF from 'jspdf'
-import data from '@/data.json'
 
 const tableData = ref([])
 const allData = ref([]) // Store all data for reset
@@ -153,8 +152,12 @@ watch(searchQuery, () => {
 
 const fetchData = async () => {
   try {
-    tableData.value = data
-    allData.value = data
+    const response = await fetch('/data.json') // Ambil data dari public/data.json
+    if (!response.ok) throw new Error('Failed to fetch data')
+
+    const jsonData = await response.json() // Parse JSON
+    tableData.value = jsonData
+    allData.value = jsonData
   } catch (err) {
     error.value = 'Failed to load data: ' + err.message
     console.error('Error loading data:', err)

@@ -9,10 +9,13 @@ Chart.register(...registerables)
 const sensorData = ref([])
 
 // Fetch data dari lokal JSON
-const fetchData = () => {
+const fetchData = async () => {
   try {
-    // Ambil 10 data terakhir
-    sensorData.value = data.slice(-10)
+    const response = await fetch('/data.json') // Ambil dari public/data.json
+    if (!response.ok) throw new Error('Failed to fetch data')
+
+    const jsonData = await response.json() // Parse JSON
+    sensorData.value = jsonData.slice(-10) // Ambil 10 data terakhir
 
     console.log('Processed Sensor Data:', sensorData.value)
   } catch (error) {
