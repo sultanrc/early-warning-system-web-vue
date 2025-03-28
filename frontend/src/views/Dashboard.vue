@@ -158,8 +158,11 @@ onMounted(() => {
         viewBox="0 0 46 50"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        class="absolute scale-50 md:scale-75 xl:scale-100 left-8 md:left-16 lg:left-12 xl:left-20 top-10 md:top-20 md:opacity-0 md:transition-all md:duration-700 md:ease-out"
-        :class="{ 'md:opacity-100 md:top-12': isVisible }"
+        class="absolute scale-50 md:scale-75 xl:scale-100 left-8 md:left-16 lg:left-12 xl:left-20 top-10 md:top-20 md:opacity-0 transition-all duration-700 ease-out"
+        :class="{
+          'md:opacity-100': isVisible,
+          'md:top-12': isVisible,
+        }"
       >
         <path
           d="M13 34.9995C11.6193 34.9995 10.5 36.1187 10.5 37.4995C10.5 38.8802 11.6193 39.9995 13 39.9995C14.3807 39.9995 15.5 38.8802 15.5 37.4995C15.5 36.1187 14.3807 34.9995 13 34.9995ZM13 34.9995L13.0177 25M13 37.4995L13.0177 37.5173M43 7.5C43 10.2614 40.7615 12.5 38 12.5C35.2385 12.5 33 10.2614 33 7.5C33 4.73857 35.2385 2.5 38 2.5C40.7615 2.5 43 4.73857 43 7.5ZM23 37.4995C23 43.0225 18.5228 47.4995 13 47.4995C7.47715 47.4995 3 43.0225 3 37.4995C3 34.9635 3.9441 32.6478 5.5 30.885V10C5.5 5.85788 8.85788 2.5 13 2.5C17.1421 2.5 20.5 5.85788 20.5 10V30.885C22.056 32.6478 23 34.9635 23 37.4995Z"
