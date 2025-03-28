@@ -355,7 +355,7 @@ onMounted(() => {
       >
     </div>
   </section>
-  <section id="chart" class="flex flex-col md:flex-row justify-between gap-6">
+  <section id="chart" class="flex flex-col md:flex-row justify-between gap-6 pb-14 md:pb-0">
     <div
       class="md:w-1/2 flex flex-col h-[150px] 2xl:h-[360px] md:h-[300px] p-1 md:p-4 items-center justify-between md:bg-primary rounded-3xl"
     >

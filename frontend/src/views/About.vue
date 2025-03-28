@@ -3,7 +3,7 @@
 <template>
   <section
     id="about"
-    class="w-full flex flex-col gap-6 md:gap-12 md:pr-6 bg-white max-h-[750px] md:overflow-y-auto"
+    class="w-full flex flex-col gap-8 md:gap-12 md:pr-6 bg-white max-h-[750px] md:overflow-y-auto"
   >
     <div class="flex flex-col md:flex-row">
       <div class="md:w-1/2 flex flex-col gap-2 text-sm md:pr-10">
@@ -26,8 +26,11 @@
         class="hidden md:flex md:w-1/2 h-[270px] object-cover object-[50%_90%] rounded-xl shadow-md"
       />
     </div>
-    <div class="flex flex-col md:flex-row gap-4 md:gap-0">
-      <img src="/images/flow.jpeg" class="md:w-1/2 h-[160px] md:h-[240px] 2xl:h-[300px] md:pr-6" />
+    <div class="flex flex-col md:flex-row gap-8 md:gap-0">
+      <img
+        src="/images/flow.jpeg"
+        class="scale-90 md:scale-100 md:w-1/2 h-[160px] md:h-[240px] 2xl:h-[300px] md:pr-6"
+      />
       <div class="md:w-1/2 flex flex-col gap-2 text-sm">
         <h1 class="text-2xl font-semibold">How the System Works?</h1>
         <p class="text-justify text-neutral-500">
@@ -49,7 +52,7 @@
       </span>
 
       <div
-        class="flex flex-col md:flex-row md:pb-12 px-6 md:px-0 items-center md:items-start justify-center gap-6 md:gap-10"
+        class="flex flex-col md:flex-row md:pb-12 px-4 md:px-0 items-center md:items-start justify-center gap-6 md:gap-10"
       >
         <!-- Thoriq -->
         <div
