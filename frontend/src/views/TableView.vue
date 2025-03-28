@@ -55,16 +55,13 @@
       </div>
     </div>
 
-    <!-- Loading state -->
     <div v-if="loading" class="text-center py-8">Loading data...</div>
 
-    <!-- Error state -->
     <div v-else-if="error" class="text-center py-8 text-red-500">
       {{ error }}
       <button @click="fetchData" class="ml-2 underline">Try again</button>
     </div>
 
-    <!-- Table with data -->
     <div v-else class="overflow-x-auto rounded-lg border border-gray-300">
       <table id="table-container" class="min-w-full text-sm">
         <thead>
@@ -79,11 +76,11 @@
         <tbody>
           <template v-if="filteredData.length > 0">
             <tr v-for="(item, index) in paginatedData" :key="index" class="border-b">
-              <td class="px-4 py-2">{{ item.date }}</td>
-              <td class="px-4 py-2">{{ item.time }}</td>
-              <td class="px-4 py-2">{{ item.temp }} °C</td>
-              <td class="px-4 py-2">{{ item.hum }} %</td>
-              <td class="px-4 py-2">{{ item.fa ? 'Fire detected' : 'Safe' }}</td>
+              <td :class="tableCellClass">{{ item.date }}</td>
+              <td :class="tableCellClass">{{ item.time }}</td>
+              <td :class="tableCellClass">{{ item.temp }} °C</td>
+              <td :class="tableCellClass">{{ item.hum }} %</td>
+              <td :class="tableCellClass">{{ item.fa ? 'Fire detected' : 'Safe' }}</td>
             </tr>
           </template>
           <tr v-else>
@@ -92,8 +89,6 @@
         </tbody>
       </table>
     </div>
-
-    <!-- Pagination -->
     <div v-if="!loading && !error" class="my-4 flex justify-between items-center">
       <div class="text-sm font-base text-neutral-400">
         Showing {{ startIndex + 1 }} to {{ Math.min(endIndex, filteredData.length) }} of
@@ -137,7 +132,7 @@ import { ref, computed, watch, onMounted } from 'vue'
 import jsPDF from 'jspdf'
 
 const tableData = ref([])
-const allData = ref([]) // Store all data for reset
+const allData = ref([])
 const loading = ref(false)
 const error = ref(null)
 const selectedDate = ref('')
@@ -145,17 +140,20 @@ const currentPage = ref(1)
 const pageSize = 10
 const searchQuery = ref('')
 
-// Reset to first page when search query changes
+const tableCellClass = computed(
+  () => 'px-4 py-2 hover:text-lg hover:font-semibold transition ease-in-out',
+)
+
 watch(searchQuery, () => {
   currentPage.value = 1
 })
 
 const fetchData = async () => {
   try {
-    const response = await fetch('/data.json') // Ambil data dari public/data.json
+    const response = await fetch('/data.json')
     if (!response.ok) throw new Error('Failed to fetch data')
 
-    const jsonData = await response.json() // Parse JSON
+    const jsonData = await response.json()
     tableData.value = jsonData
     allData.value = jsonData
   } catch (err) {
@@ -175,51 +173,38 @@ const filterByDate = async () => {
   currentPage.value = 1
 }
 
-// Improved search functionality
 const filteredData = computed(() => {
   const query = searchQuery.value.trim().toLowerCase()
   const dateFilter = selectedDate.value
 
   return allData.value
     .filter((item) => {
-      // Check if the item matches the date filter (if any)
       const dateMatch = !dateFilter || item.date === dateFilter
-
-      // Check if the item matches the search query
       const queryMatch =
         !query || Object.values(item).some((value) => String(value).toLowerCase().includes(query))
 
       return dateMatch && queryMatch
     })
-    .reverse() // Most recent data first
+    .reverse()
 })
 
-// Pagination computed properties
 const totalPages = computed(() => Math.max(1, Math.ceil(filteredData.value.length / pageSize)))
 const startIndex = computed(() => (currentPage.value - 1) * pageSize)
 const endIndex = computed(() => startIndex.value + pageSize)
 const paginatedData = computed(() => filteredData.value.slice(startIndex.value, endIndex.value))
 
-// PDF Generation
 const generatePDF = () => {
   const doc = new jsPDF()
-
-  // Judul
   doc.setFontSize(18)
   doc.text('Sensor Data', 10, 10)
-
-  // Header
   doc.setFontSize(12)
   doc.text('Date', 10, 20)
   doc.text('Time', 50, 20)
   doc.text('Temperature', 90, 20)
   doc.text('Humidity', 130, 20)
   doc.text('Fire Anomaly', 170, 20)
-
-  // Garis pembatas header
   doc.line(10, 22, 200, 22)
 
-  // Data
   doc.setFontSize(10)
   filteredData.value.forEach((item, index) => {
     const yPosition = 30 + index * 10

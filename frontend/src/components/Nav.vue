@@ -51,7 +51,6 @@ const toggleMenu = () => {
     </button>
   </div>
 
-  <!-- Navigation menu - always visible on desktop, toggle on mobile -->
   <ul
     class="flex flex-col gap-2 md:pt-16 lg:pt-12"
     :class="{
@@ -81,7 +80,7 @@ const toggleMenu = () => {
           />
         </svg>
       </span>
-      <router-link to="/" class="font-semibold"> Dashboard </router-link>
+      <router-link to="/" class="font-semibold block w-full h-full"> Dashboard </router-link>
     </li>
 
     <li
@@ -105,7 +104,9 @@ const toggleMenu = () => {
           />
         </svg>
       </span>
-      <router-link to="/tableview" class="font-semibold"> Table View </router-link>
+      <router-link to="/tableview" class="font-semibold block w-full h-full">
+        Table View
+      </router-link>
     </li>
 
     <li
@@ -129,7 +130,7 @@ const toggleMenu = () => {
           />
         </svg>
       </span>
-      <router-link to="/about" class="font-semibold"> About </router-link>
+      <router-link to="/about" class="font-semibold block w-full h-full"> About </router-link>
     </li>
   </ul>
   <div

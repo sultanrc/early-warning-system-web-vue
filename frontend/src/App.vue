@@ -7,7 +7,6 @@ import Footer from './components/Footer.vue'
 
 const route = useRoute()
 
-// Tentukan class dinamis berdasarkan route
 const mainClass = computed(() =>
   route.name === 'about'
     ? 'relative flex flex-col mt-2 mb-12 md:mb-0 md:my-4 pt-8 pb-8 md:pb-2 md:mb-4 px-8 gap-6 rounded-3xl outline outline-1 outline-secondary bg-white h-[calc(100vh-180px)] md:h-auto'

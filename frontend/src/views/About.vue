@@ -1,4 +1,10 @@
-<script setup></script>
+<script setup>
+import useFadeIn from '@/composables/useFadeIn'
+import useScrollFadeIn from '@/composables/useScrollFadeIn'
+
+const { isVisible } = useFadeIn()
+const { element, isVisible: isScrolledVisible } = useScrollFadeIn()
+</script>
 
 <template>
   <section
@@ -6,9 +12,12 @@
     class="w-full flex flex-col gap-8 md:gap-12 md:pr-6 bg-white max-h-[750px] md:overflow-y-auto"
   >
     <div class="flex flex-col md:flex-row">
-      <div class="md:w-1/2 flex flex-col gap-2 text-sm md:pr-10">
+      <div
+        class="md:w-1/2 flex flex-col gap-2 text-sm md:pr-10 opacity-0 -translate-x-10 transition-all duration-700 ease-out"
+        :class="{ 'opacity-100 translate-x-[2px]': isVisible }"
+      >
         <h1 class="text-2xl font-semibold">What is Early Warning System?</h1>
-        <p class="text-justify text-neutral-500">
+        <p class="text-justify text-neutral-400 text-light">
           From February to June 2023, our team participated in an internship program at PetroChina
           International Jabung Ltd. as Information Technology Developers. During this period, we
           developed the Early Warning System (EWS) to monitor temperature, humidity, and fire
@@ -23,17 +32,22 @@
       </div>
       <img
         src="/images/photo1.jpeg"
-        class="hidden md:flex md:w-1/2 h-[270px] object-cover object-[50%_90%] rounded-xl shadow-md"
+        class="hidden md:flex md:w-1/2 h-[270px] object-cover object-[50%_90%] rounded-xl shadow-md opacity-0 translate-x-10 transition-all duration-700 ease-out"
+        :class="{ 'opacity-100 -translate-x-[2px]': isVisible }"
       />
     </div>
     <div class="flex flex-col md:flex-row gap-8 md:gap-0">
       <img
         src="/images/flow.jpeg"
-        class="scale-90 md:scale-100 md:w-1/2 h-[160px] md:h-[240px] 2xl:h-[300px] md:pr-6"
+        class="scale-90 md:w-1/2 h-[160px] md:h-[240px] 2xl:h-[300px] md:pr-6 opacity-0 md:-translate-x-10 transition-all duration-700 ease-out"
+        :class="{ 'opacity-100 md:-translate-x-[2px]': isVisible }"
       />
-      <div class="md:w-1/2 flex flex-col gap-2 text-sm">
+      <div
+        class="md:w-1/2 flex flex-col gap-2 text-sm opacity-0 translate-x-10 transition-all duration-700 ease-out"
+        :class="{ 'opacity-100 -translate-x-[2px]': isVisible }"
+      >
         <h1 class="text-2xl font-semibold">How the System Works?</h1>
-        <p class="text-justify text-neutral-500">
+        <p class="text-justify text-neutral-400 text-light">
           EWS begins by collecting data from the DHT11 sensor, which measures temperature and
           humidity, and a fire detection sensor. This data is then sent to the ESP8266 (NodeMCU),
           which processes and forwards it to Node-RED. Node-RED evaluates the received data and
@@ -52,7 +66,9 @@
       </span>
 
       <div
-        class="flex flex-col md:flex-row md:pb-12 px-4 md:px-0 items-center md:items-start justify-center gap-6 md:gap-10"
+        ref="element"
+        class="flex flex-col md:flex-row md:pb-12 px-4 md:px-0 items-center md:items-start justify-center gap-6 md:gap-10 opacity-0 translate-y-20 transition-all duration-700 ease-out"
+        :class="{ 'opacity-100 -translate-y-1': isScrolledVisible }"
       >
         <!-- Thoriq -->
         <div
