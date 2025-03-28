@@ -65,7 +65,7 @@ const toggleMenu = () => {
         isActive('/').value ? 'bg-white text-temp rounded-md ' : 'text-neutral-400',
         !isMenuOpen ? 'px-2 py-1' : 'text-xl',
       ]"
-      class="flex items-center gap-4"
+      class="group flex items-center gap-4 hover:bg-white hover:text-temp hover:rounded-md transition"
     >
       <span class="w-5 h-5 mb-[2px] scale-75 lg:scale-100" :class="isMenuOpen ? 'hidden' : 'flex'">
         <svg
@@ -74,6 +74,7 @@ const toggleMenu = () => {
           viewBox="0 0 20 20"
           xmlns="http://www.w3.org/2000/svg"
           :fill="isActive('/').value ? '#c7000d' : '#a3a3a3'"
+          class="group-hover:fill-temp transition"
         >
           <path
             d="M2.5 10.8333H9.16667V2.5H2.5V10.8333ZM2.5 17.5H9.16667V12.5H2.5V17.5ZM10.8333 17.5H17.5V9.16667H10.8333V17.5ZM10.8333 2.5V7.5H17.5V2.5H10.8333Z"
@@ -88,7 +89,7 @@ const toggleMenu = () => {
         isActive('/tableview').value ? 'bg-white text-temp rounded-md' : 'text-neutral-400',
         !isMenuOpen ? 'px-2 py-1' : 'text-xl',
       ]"
-      class="flex items-center gap-4"
+      class="group flex items-center gap-4 hover:bg-white hover:text-temp hover:rounded-md transition"
     >
       <span class="w-5 h-5 scale-75 lg:scale-100" :class="isMenuOpen ? 'hidden' : 'flex'">
         <svg
@@ -96,7 +97,7 @@ const toggleMenu = () => {
           height="18"
           viewBox="0 0 18 18"
           xmlns="http://www.w3.org/2000/svg"
-          class="ms-[2px]"
+          class="ms-[2px] group-hover:fill-temp transition"
           :fill="isActive('/tableview').value ? '#c7000d' : '#a3a3a3'"
         >
           <path
@@ -112,7 +113,7 @@ const toggleMenu = () => {
         isActive('/about').value ? 'bg-white text-temp rounded-md' : 'text-neutral-400',
         !isMenuOpen ? 'px-2 py-1' : 'text-xl',
       ]"
-      class="flex items-center gap-4"
+      class="group flex items-center gap-4 hover:bg-white hover:text-temp hover:rounded-md transition"
     >
       <span class="w-5 h-5 scale-75 lg:scale-100" :class="isMenuOpen ? 'hidden' : 'flex'">
         <svg
@@ -121,6 +122,7 @@ const toggleMenu = () => {
           viewBox="0 0 18 18"
           xmlns="http://www.w3.org/2000/svg"
           :fill="isActive('/about').value ? '#c7000d' : '#a3a3a3'"
+          class="ms-[2px] group-hover:fill-temp transition"
         >
           <path
             d="M8.16669 4.83329H9.83335V6.49996H8.16669V4.83329ZM8.16669 8.16663H9.83335V13.1666H8.16669V8.16663ZM9.00002 0.666626C4.40002 0.666626 0.666687 4.39996 0.666687 8.99996C0.666687 13.6 4.40002 17.3333 9.00002 17.3333C13.6 17.3333 17.3334 13.6 17.3334 8.99996C17.3334 4.39996 13.6 0.666626 9.00002 0.666626ZM9.00002 15.6666C5.32502 15.6666 2.33335 12.675 2.33335 8.99996C2.33335 5.32496 5.32502 2.33329 9.00002 2.33329C12.675 2.33329 15.6667 5.32496 15.6667 8.99996C15.6667 12.675 12.675 15.6666 9.00002 15.6666Z"
