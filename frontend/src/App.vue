@@ -10,12 +10,12 @@ const route = useRoute()
 // Tentukan class dinamis berdasarkan route
 const mainClass = computed(() =>
   route.name === 'about'
-    ? 'relative flex flex-col mt-2 mb-12 md:mb-0 md:my-4 pt-8 pb-8 md:pb-2 px-8 gap-6 rounded-3xl outline outline-1 outline-secondary bg-white h-[calc(100vh+360px)] md:h-auto'
-    : 'relative flex flex-col mt-2 md:my-4 pt-8 pb-8 md:pb-2 px-8 gap-6 rounded-3xl outline outline-1 outline-secondary bg-white h-[calc(100vh-200px)] md:h-auto',
+    ? 'relative flex flex-col mt-2 mb-12 md:mb-0 md:my-4 pt-8 pb-8 md:pb-2 px-8 gap-6 rounded-3xl outline outline-1 outline-secondary bg-white h-[calc(100vh-180px)] md:h-auto'
+    : 'relative flex flex-col mt-2 md:my-4 pt-8 pb-8 md:pb-2 px-8 gap-6 rounded-3xl outline outline-1 outline-secondary bg-white h-[calc(100vh-180px)] md:h-auto',
 )
 const contentClass = computed(() =>
   route.name === 'about'
-    ? 'lg:w-[720px] xl:w-[1000px] 2xl:w-[1200px] flex flex-col px-8 md:px-0 gap-6 md:max-h-[750px] md:overflow-y-auto'
+    ? 'lg:w-[720px] xl:w-[1000px] 2xl:w-[1200px] flex flex-col px-8 md:px-0 gap-6 md:max-h-[750px] overflow-y-auto'
     : 'lg:w-[720px] xl:w-[1000px] 2xl:w-[1200px] flex flex-col gap-6 md:max-h-[750px] overflow-y-auto',
 )
 </script>

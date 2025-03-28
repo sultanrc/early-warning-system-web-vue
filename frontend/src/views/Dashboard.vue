@@ -364,9 +364,12 @@ onMounted(() => {
         v-if="sensorData.length > 0"
         :data="temperatureChartData"
         :options="temperatureChartOptions"
-        class="w-full h-full scale-75 md:scale-90"
+        class="w-full h-full scale-90"
       />
       <span v-else>Loading...</span>
+    </div>
+    <div class="md:hidden text-center text-slate-400">
+      <h1>scroll down...</h1>
     </div>
     <div
       class="md:w-1/2 flex flex-col h-[150px] 2xl:h-[360px] md:h-[300px] p-1 md:p-4 items-center justify-between md:bg-primary rounded-3xl"
@@ -376,7 +379,7 @@ onMounted(() => {
         v-if="sensorData.length > 0"
         :data="humidityChartData"
         :options="humidityChartOptions"
-        class="w-full h-full scale-75 md:scale-90"
+        class="w-full h-full scale-90"
       />
       <span v-else>Loading...</span>
     </div>
