@@ -24,7 +24,7 @@ const description = computed(() => pageData[route.name]?.description || '')
 </script>
 
 <template>
-  <div class="flex items-start justify-between">
+  <div class="flex items-start justify-between pt-4 md:pt-0">
     <div class="flex flex-col gap-3">
       <h1 id="heading" class="text-3xl md:text-4xl font-bold">{{ heading }}</h1>
       <span id="description" class="hidden md:flex text-xs text-neutral-400">{{
@@ -37,7 +37,7 @@ const description = computed(() => pageData[route.name]?.description || '')
     </div>
   </div>
   <hr class="md:hidden" />
-  <span id="description" class="flex md:hidden mx-auto text-sm text-neutral-400">{{
+  <span id="description" class="flex md:hidden mx-auto text-sm text-neutral-400 pb-4">{{
     description
   }}</span>
 </template>

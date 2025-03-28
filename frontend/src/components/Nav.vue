@@ -56,7 +56,7 @@ const toggleMenu = () => {
     class="flex flex-col gap-2 md:pt-16 lg:pt-12"
     :class="{
       'hidden md:flex': !isMenuOpen,
-      'flex p-4 mt-4 absolute bg-white border border-1 border-secondary z-10 right-20 gap-4':
+      'flex p-4 mt-4 absolute bg-white border border-1 border-secondary z-20 right-20 gap-4':
         isMenuOpen,
     }"
   >
