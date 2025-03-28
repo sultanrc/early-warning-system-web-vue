@@ -13,12 +13,6 @@ const contentClass = computed(() =>
     ? 'lg:w-[720px] xl:w-[1000px] 2xl:w-[1200px] flex flex-col p-8 md:p-0 gap-6 md:max-h-[750px] overflow-y-auto'
     : 'lg:w-[720px] xl:w-[1000px] 2xl:w-[1200px] flex flex-col gap-6 md:max-h-[750px] md:overflow-y-auto',
 )
-
-const mainClass = computed(() =>
-  route.name === 'about'
-    ? 'relative flex flex-col mt-2 md:my-4 pt-8 pb-8 md:pb-2 px-8 gap-6 rounded-3xl outline outline-1 outline-secondary bg-white h-[760px] md:h-auto md:border-red-500'
-    : 'relative flex flex-col mt-2 md:my-4 pt-8 pb-8 md:pb-2 px-8 gap-6 rounded-3xl outline outline-1 outline-secondary bg-white md:h-auto',
-)
 </script>
 
 <template>
@@ -28,7 +22,10 @@ const mainClass = computed(() =>
   >
     <Nav />
   </nav>
-  <main id="main-container" :class="mainClass">
+  <main
+    id="main-container"
+    class="relative flex flex-col mt-2 md:my-4 pt-8 pb-8 md:pb-2 px-8 gap-6 rounded-3xl outline outline-1 outline-secondary bg-white h-[calc(100vh-80px)] md:h-auto"
+  >
     <header id="header" class="flex flex-col gap-4 md:gap-0">
       <Header />
     </header>
