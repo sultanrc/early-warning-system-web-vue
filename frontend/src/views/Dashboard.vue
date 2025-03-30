@@ -160,8 +160,7 @@ onMounted(() => {
         xmlns="http://www.w3.org/2000/svg"
         class="absolute scale-50 md:scale-75 xl:scale-100 left-8 md:left-16 lg:left-12 xl:left-20 top-10 md:top-20 md:opacity-0 transition-all duration-700 ease-out"
         :class="{
-          'md:opacity-100': isVisible,
-          'md:top-12': isVisible,
+          'md:opacity-100 md:top-12': isVisible,
         }"
       >
         <path
